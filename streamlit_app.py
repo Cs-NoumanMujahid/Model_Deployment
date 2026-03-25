@@ -79,11 +79,12 @@ def main():
     <div class="top-box">
       <b>Academic Project:</b> This application is developed for a university assignment and is not a clinical or diagnostic tool.<br>
       <b>Limited Training Data:</b> The model is trained on a small sample (~100 instances). For real-world use, significantly larger datasets are required.
-      <b>Limited Usage:</b> The storage allocated by PythonAnywhere was Insufficient for model to deploy. So Streamlit is being used.
     </div>
     """, unsafe_allow_html=True)
 
+    st.write("Limited Usage (2-3 Prediction attempts): The storage allocated by PythonAnywhere was Insufficient for model to deploy. So Streamlit is being used, which allows limited prediction attempts")
     st.write("Enter text below to analyze potential risk patterns:")
+    
 
     user_input = st.text_area(
         "Text to Analyze",
