@@ -1,0 +1,35 @@
+Active URL of Deployed Model:
+https://yourusername.pythonanywhere.com
+
+Finalized Deployment Steps (Optimized for 500MB Free Tier):
+
+1. PREPARATION:
+   - Ensure 'naive_bayes_model.pkl' and 'tfidf_vectorizer.pkl' are in your folder (I have already generated these for you).
+   - We removed 'pandas' from requirements.txt to save ~100MB of disk space.
+
+2. UPLOAD TO PYTHONANYWHERE:
+   - Go to the "Files" tab on PythonAnywhere.
+   - Upload 'app.py', 'naive_bayes_model.pkl', 'tfidf_vectorizer.pkl', and 'requirements.txt'.
+   - Create a directory named 'templates' and upload 'index.html' into it.
+
+3. WEB APP SETUP:
+   - Go to the "Web" tab.
+   - Click "Add a new web app".
+   - Select "Flask" and choose "Python 3.10" (or latest).
+   - When asked for the path to your flask app, enter: /home/yourusername/app.py
+
+4. INSTALL DEPENDENCIES:
+   - Open a "Bash" console from the "Consoles" tab.
+   - Run the following command (this installs only the essential small packages):
+     pip3 install --user -r requirements.txt
+   - NOTE: We are NOT installing pandas to stay well under your 500MB limit.
+
+5. WSGI CONFIGURATION (CRITICAL):
+   - In the "Web" tab, find the "WSGI configuration file" link and click it.
+   - Make sure it imports your app:
+     from app import app as application
+   - (By default, PythonAnywhere expects the file to be named 'flask_app.py'. If you kept it as 'app.py', just update the import line in the WSGI file).
+
+6. FINALIZE:
+   - Go back to the "Web" tab and click the big green "Reload" button.
+   - Your model is now live at https://yourusername.pythonanywhere.com!
