@@ -5,6 +5,8 @@ import nltk
 from nltk.corpus import stopwords
 import os
 
+st.write("Limited Usage (2-3 Prediction attempts): The storage allocated by PythonAnywhere was Insufficient for model to deploy. So Streamlit is being used, which allows limited prediction attempts")
+
 # Page config
 st.set_page_config(
     page_title="Suicide Detection Predictor",
@@ -82,7 +84,7 @@ def main():
     </div>
     """, unsafe_allow_html=True)
 
-    st.write("Limited Usage (2-3 Prediction attempts): The storage allocated by PythonAnywhere was Insufficient for model to deploy. So Streamlit is being used, which allows limited prediction attempts")
+    
     st.write("Enter text below to analyze potential risk patterns:")
     
 
